@@ -1,0 +1,1 @@
+Projects from *Aprendizado de Máquina* (Artificial Intelligence) course from Master's Program @ UFSC.
