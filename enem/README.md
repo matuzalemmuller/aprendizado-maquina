@@ -10,7 +10,7 @@
 ```
 iconv -f iso-8859-1 -t UTF-8 microdados_enem_2016_coma.csv > enem_data.csv
 ```
-4. O nome de intituições pode conter vírgulas, o que dificulta a leitura do arquivo csv. Por isto, é necessário remover os exemplos que possuam mais de 165 vírgulas, caso contrário os dados não serão importados corretamente. Para remover os exemplos que não possuam 165 vírgulas, execute o arquivo `prepare_data.py`:
+4. O nome de instituições pode conter vírgulas, o que dificulta a leitura do arquivo csv. Por isto, é necessário remover os exemplos que possuam mais de 165 vírgulas, caso contrário os dados não serão importados corretamente. Para remover os exemplos que não possuam 165 vírgulas, execute o arquivo `prepare_data.py`:
 ```
 python3 prepare_date.py
 ```
