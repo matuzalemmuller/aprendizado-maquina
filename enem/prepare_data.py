@@ -1,10 +1,10 @@
 def main():
     data_file = "data/enem_data.csv"
 
-    with open(data_file, 'r') as f:
+    with open(data_file, 'r', encoding='iso-8859-1') as f:
         lines = f.readlines()
         print("Data loaded")
-    with open(data_file, 'w') as f:
+    with open(data_file, 'w', encoding='iso-8859-1') as f:
         number_of_lines = len(lines)
         for idx, line in enumerate(lines):
             count = line.count(',')            

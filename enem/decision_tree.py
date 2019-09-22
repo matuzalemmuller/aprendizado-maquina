@@ -3,9 +3,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
-# https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options
 data_file = "data/enem_data.csv"
-
 data_type = {
         'NU_INSCRICAO': int,
         'NU_ANO': int,
@@ -176,5 +174,5 @@ data_type = {
         }
 
 # load dataset
-data = pd.read_csv(data_file, dtype=data_type)
+data = pd.read_csv(data_file, dtype=data_type, encoding='iso-8859-1')
 print(data.head())
