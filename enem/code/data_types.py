@@ -1,4 +1,4 @@
-data_file = "data/enem_data.csv"
+data_file = "../data/enem_data.csv"
 
 data_type = {
         'NU_INSCRICAO': int,

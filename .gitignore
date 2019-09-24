@@ -7,8 +7,5 @@ env
 # VS Code preferences directory
 .vscode
 
-# Data files
-data
-
 # masOS
 .DS_Store

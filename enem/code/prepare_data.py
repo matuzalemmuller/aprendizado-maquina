@@ -1,6 +1,6 @@
-def main():
-    data_file = "data/enem_data.csv"
+from data_types import *  
 
+def main():
     with open(data_file, 'r', encoding='iso-8859-1') as f:
         lines = f.readlines()
         print("Data loaded")
