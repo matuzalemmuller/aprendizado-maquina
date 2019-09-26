@@ -1,20 +1,27 @@
-from data_types import *  
+# Removes lines with less or more than 165 commas
+# Replaces single and double quotes by spaces
+# Saves the new data file using UTF-8 format
 
 def main():
-    with open(data_file, 'r', encoding='iso-8859-1') as f:
-        lines = f.readlines()
-        print("Data loaded")
-    with open(data_file, 'w', encoding='iso-8859-1') as f:
-        number_of_lines = len(lines)
-        for idx, line in enumerate(lines):
-            count = line.count(',')            
-            if count != 165:
-                lines.remove(line)
-                print("Removed entry " + str(idx) +
-                        " out of " + str(number_of_lines))
-            else:
-                f.write(line)
-    print("Invalid entries have been removed!")
+    load_file = "../data/enem_data.csv"
+    save_file = "../data/enem_data_converted.csv"
+
+    with open(load_file, 'r', encoding='iso-8859-1') as file_loaded:
+        print("Loading data from file " + load_file + "...")      
+        with open(save_file, 'w', encoding='utf-8') as f:
+            for idx, line in enumerate(file_loaded):
+                count = line.count(',')            
+                if count != 165:
+                    print("Removed line " + str(idx))
+                else:
+                    if "'" in line:
+                        line = line.replace("'", " ")
+                        print("Removed single quote from line " + str(idx))
+                    if '"' in line:
+                        line = line.replace('"', " ")
+                        print("Removed double quote from line " + str(idx))
+                    f.write(line)
+        print("Data has been prepared for analysis!")
 
 if __name__ == "__main__":
     main()
