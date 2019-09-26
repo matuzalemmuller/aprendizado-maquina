@@ -1,6 +1,0 @@
-pandas>=0.25.1
-sklearn==0.0
-matplotlib
-seaborn
-pydotplus
-IPython
