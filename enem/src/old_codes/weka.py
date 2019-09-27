@@ -7,7 +7,7 @@ class Weka:
     def __init__(self, file):
         self.file = file
 
-    def write(self, name, data, force_str):
+    def write(self, name, data, force_str = []):
         if not isinstance(data, pd.DataFrame):
             try:
                 data = pd.DataFrame(data) 

@@ -1,36 +1,37 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import string
 import random
 
 class Reader:
-    def __init__(self, file, chunksize = 1000, encoding = 'ISO-8859-1', columns = None, maxRows = None):
+    # def __init__(self, file, chunksize = 1000, encoding = 'ISO-8859-1', columns = None, maxRows = None):
+    def __init__(self, file, chunksize = 1000, encoding = 'ISO-8859-1', columns = None):
         self.chunksize = chunksize
         self.file = file
         self.encoding = encoding
         self.columns = columns
 
-        if maxRows == None:
-            with open(file) as f:
-                self.maxRows = sum(1 for line in f)
-            print(self.maxRows)
-        else:
-            self.maxRows = maxRows
+        # if maxRows == None:
+        #     with open(file) as f:
+        #         self.maxRows = sum(1 for line in f)
+        #     print(self.maxRows)
+        # else:
+        #     self.maxRows = maxRows
 
         self.skip = []
-
-        self.tfr = pd.read_csv(file, chunksize = self.chunksize, encoding = encoding, usecols = columns)
+        
+        self.tfr = pd.read_csv(file, chunksize = self.chunksize, encoding = encoding, usecols = columns, iterator=True)
 
     def read(self, chunksize = 0):
         if chunksize <= 0:
             chunksize = self.chunksize
         df = self.tfr.get_chunk(chunksize)
-        df.dropna(inplace=True)
+        # print(len(df.index))
+        # df.dropna(inplace=True)
 
-        if len(df.index) < chunksize:
-            df_p = self.read(chunksize - len(df.index))
-            df = pd.concat([df, df_p])
+        # print(len(df.index))
+        # if len(df.index) < chunksize:
+        #     df_p = self.read(chunksize - len(df.index))
+        #     df = pd.concat([df, df_p])
 
         return df
 
@@ -96,10 +97,13 @@ class Reader:
         return df
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
     #%% Abre o arquivo para leitura
     print("Creating...")
-    reader = Reader('../data/enem_data.csv', maxRows = 8627368, columns = ['SG_UF_RESIDENCIA', 'Q006', 'NU_NOTA_CN', 'NU_NOTA_CH', 'NU_NOTA_LC', 'NU_NOTA_MT', 'NU_NOTA_REDACAO'])
+    # reader = Reader('../data/enem_data.csv', maxRows = 8627368, columns = ['SG_UF_RESIDENCIA', 'Q006', 'NU_NOTA_CN', 'NU_NOTA_CH', 'NU_NOTA_LC', 'NU_NOTA_MT', 'NU_NOTA_REDACAO'])
+    reader = Reader('../data/enem_data.csv', columns = ['SG_UF_RESIDENCIA', 'Q006', 'NU_NOTA_CN', 'NU_NOTA_CH', 'NU_NOTA_LC', 'NU_NOTA_MT', 'NU_NOTA_REDACAO'])
 
     #%% Lê um pacote
     print("Reading...")
