@@ -1,15 +1,12 @@
-# Removes lines with less or more than 165 commas
+# Removes lines with less or more than 166 commas
 # Replaces single and double quotes by spaces
 # Saves the new data file using UTF-8 format
-
-import sys
-sys.path.append('./old_codes')
-
 import data_types as dt
 
+# remove_empty: true to delete lines with missing values, false to keep lines
 def main(remove_empty):
-    load_file = "../data/enem_data.csv"
-    save_file = "../data/enem_data_converted.csv"
+    load_file = "../../data/enem_data.csv"
+    save_file = "../../data/enem_data_converted.csv"
 
     header = None
     valid = [0] * len(dt.data_useful)
@@ -44,4 +41,4 @@ def main(remove_empty):
         print("Data has been prepared for analysis!")
 
 if __name__ == "__main__":
-    main(remove_empty = True)
+    main(remove_empty = False)
