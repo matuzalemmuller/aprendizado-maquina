@@ -8,7 +8,7 @@ data_useful = [
     'TP_ST_CONCLUSAO',
     'TP_ANO_CONCLUIU',
     'TP_ESCOLA',
-    'TP_ENSINO',
+    # 'TP_ENSINO', 6740902 NA - desconsiderar
     'IN_TREINEIRO',
     'IN_BAIXA_VISAO',
     'IN_CEGUEIRA',
@@ -103,13 +103,13 @@ data_useful = [
     'Q024',
     'Q025',
     'Q026',
-    'Q027',
-    'Q028',
-    'Q029',
-    'Q030',
-    'Q031',
-    'Q032',
-    'Q033',
+    # 'Q027', 3836300 NA - desconsiderar
+    # 'Q028', 3836633 NA - desconsiderar
+    # 'Q029', 3836932 NA - desconsiderar
+    # 'Q030', 3837101 NA - desconsiderar
+    # 'Q031', 3837151 NA - desconsiderar
+    # 'Q032', 3837200 NA - desconsiderar
+    # 'Q033', 3837241 NA - desconsiderar
     'Q034',
     'Q035',
     'Q036',
@@ -117,7 +117,7 @@ data_useful = [
     'Q038',
     'Q039',
     'Q040',
-    'Q041',
+    # 'Q041', 6137533 NA - desconsiderar
     'Q042',
     'Q043',
     'Q044',

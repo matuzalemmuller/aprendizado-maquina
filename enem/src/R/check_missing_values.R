@@ -9,7 +9,6 @@ enem <- enem[!(is.na(enem$NU_IDADE)), ]
 
 # Add default values to missing fields
 enem$TP_ESTADO_CIVIL[is.na(enem$TP_ESTADO_CIVIL)] = 0           # solteiro
-enem$TP_ENSINO[is.na(enem$TP_ENSINO)] = 1                       # regular
 
 enem$TP_PRESENCA_CN[is.na(enem$TP_PRESENCA_CN)] = 0             # faltou a prova
 enem$TP_PRESENCA_CH[is.na(enem$TP_PRESENCA_CH)] = 0 
@@ -57,13 +56,6 @@ enem$Q023[is.na(enem$Q023)] = 'Z'                               # indefinido (no
 enem$Q024[is.na(enem$Q024)] = 'Z'                               # indefinido (nova categoria)
 enem$Q025[is.na(enem$Q025)] = 'Z'                               # indefinido (nova categoria)
 enem$Q026[is.na(enem$Q026)] = 'Z'                               # indefinido (nova categoria)
-enem$Q027[is.na(enem$Q027)] = 'Z'                               # indefinido (nova categoria)
-enem$Q028[is.na(enem$Q028)] = 'Z'                               # indefinido (nova categoria)
-enem$Q029[is.na(enem$Q029)] = 9                                 # indefinido (nova categoria)
-enem$Q030[is.na(enem$Q030)] = 9                                 # indefinido (nova categoria)
-enem$Q031[is.na(enem$Q031)] = 9                                 # indefinido (nova categoria)
-enem$Q032[is.na(enem$Q032)] = 9                                 # indefinido (nova categoria)
-enem$Q033[is.na(enem$Q033)] = 9                                 # indefinido (nova categoria)
 enem$Q034[is.na(enem$Q034)] = 9                                 # indefinido (nova categoria)
 enem$Q035[is.na(enem$Q035)] = 9                                 # indefinido (nova categoria)
 enem$Q036[is.na(enem$Q036)] = 9                                 # indefinido (nova categoria)
@@ -71,7 +63,6 @@ enem$Q037[is.na(enem$Q037)] = 9                                 # indefinido (no
 enem$Q038[is.na(enem$Q038)] = 9                                 # indefinido (nova categoria)
 enem$Q039[is.na(enem$Q039)] = 9                                 # indefinido (nova categoria)
 enem$Q040[is.na(enem$Q040)] = 9                                 # indefinido (nova categoria)
-enem$Q041[is.na(enem$Q041)] = 9                                 # indefinido (nova categoria)
 enem$Q042[is.na(enem$Q042)] = 'Z'                               # indefinido (nova categoria)
 enem$Q043[is.na(enem$Q043)] = 'Z'                               # indefinido (nova categoria)
 enem$Q044[is.na(enem$Q044)] = 'Z'                               # indefinido (nova categoria)
