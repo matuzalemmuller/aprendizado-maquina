@@ -7,7 +7,7 @@ enem = load_enem(TRUE, 100000)
 # Split dataset
 require(caTools)
 set.seed(101) 
-sample = sample.split(enem$NOTA, SplitRatio = 0.7)
+sample = sample.split(enem$NOTA, SplitRatio = 0.6)
 train = subset(enem, sample == TRUE)
 test  = subset(enem, sample == FALSE)
 

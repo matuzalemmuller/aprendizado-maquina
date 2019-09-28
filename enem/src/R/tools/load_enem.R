@@ -26,6 +26,14 @@ load_enem = function(load_from_csv, nrows = 10000){
            breaks = c(-Inf, 20, 35, 50, 70, Inf),
            labels = c('A', 'B', 'C', 'D', 'E'))
   
+  enem$REGIAO[is.element(enem$SG_UF_RESIDENCIA, c('AM','RR','AP','PA','TO','RO','AC'))] = 'A'
+  enem$REGIAO[is.element(enem$SG_UF_RESIDENCIA, c('MA','PI','CE','RN','PE','PB','SE','AL','BA'))] = 'B'
+  enem$REGIAO[is.element(enem$SG_UF_RESIDENCIA, c('MT','MS','GO','DF'))] = 'C'
+  enem$REGIAO[is.element(enem$SG_UF_RESIDENCIA, c('SP','RJ','ES','MG'))] = 'D'
+  enem$REGIAO[is.element(enem$SG_UF_RESIDENCIA, c('PR','RS','SC'))] = 'E'
+  
+  # Convert character columns to factors
+  enem[] <- lapply(enem, function(x) if(is.character(x)) as.factor(x) else x)
   
   return(enem)
 }
