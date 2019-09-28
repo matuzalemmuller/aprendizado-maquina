@@ -1,3 +1,4 @@
+# Data --------------------------------------------------------------------
 source('tools/load_enem.R')
 
 # Load dataset
@@ -10,7 +11,8 @@ enem_subset = enem[sample(c(1:1000)), ]
 prop.table(table(enem$NOTA))
 prop.table(table(enem_subset$NOTA))
 
-# Creates correlation diagram
+
+# Correlation Diagram -----------------------------------------------------
 library(corrgram)
 corrgram(enem_subset)
 
