@@ -1,15 +1,18 @@
+# virtualenv files
+env
+
+# masOS files
+.DS_Store
+
 # pycache files
 __pycache__
 *.pyc
 
-# virtualenv directory
-env
-
-# VS Code preferences directory
-.vscode
-
-# masOS
-.DS_Store
-
 # R files
 .Rhistory
+
+# VS Code files
+.vscode
+
+# csv files
+*.csv
