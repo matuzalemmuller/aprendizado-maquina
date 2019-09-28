@@ -23,13 +23,13 @@ library(rpart)
 library(rpart.plot)
 
 # Model settings
-regiao.settings <- rpart.control(minsplit = 4,
+regiao.settings <- rpart.control(minsplit = 2,
                          minbucket = round(5 / 3),
-                         maxdepth = 4,
+                         maxdepth = 6,
                          cp = 0)
 
 # Model
-regiao.model = rpart(REGIAO ~ NOTA + Q006 + Q047 + Q001, 
+regiao.model = rpart(REGIAO ~ Q005 + Q010 + Q013 + Q016 + Q018, 
                    data=train, 
                    method = 'class', 
                    control = regiao.settings)
@@ -42,3 +42,4 @@ regiao.prediction <-predict(regiao.model, test, type = 'class')
 regiao.table <- table(test$REGIAO, regiao.prediction)
 regiao.accuracy <- sum(diag(regiao.table)) / sum(regiao.table)
 print(paste('Accuracy for test', regiao.accuracy))
+
