@@ -35,5 +35,8 @@ load_enem = function(load_from_csv, nrows = 10000){
   # Convert character columns to factors
   enem[] <- lapply(enem, function(x) if(is.character(x)) as.factor(x) else x)
   
+  enem$TP_ESTADO_CIVIL = as.integer(enem$TP_ESTADO_CIVIL)
+  enem$TP_STATUS_REDACAO = as.integer(enem$TP_STATUS_REDACAO)
+  
   return(enem)
 }
