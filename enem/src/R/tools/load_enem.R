@@ -1,6 +1,6 @@
 load_enem = function(load_from_csv, nrows = 10000){
-  source('load_dataset.R', local=TRUE)
-  source('prepare_dataset.R', local=TRUE)
+  source('tools/load_dataset.R', local=TRUE)
+  source('tools/prepare_dataset.R', local=TRUE)
   
   if(load_from_csv == TRUE) {
     # Load from file
