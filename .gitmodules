@@ -1,6 +1,6 @@
 [submodule "MachineLearningENEM2016"]
 	path = MachineLearningENEM2016
-	url = https://github.com/cbonafin/MachineLearningENEM2016
+	url = https://github.com/matuzalemmuller/MachineLearningENEM2016
 [submodule "cnn-ocr"]
 	path = cnn-ocr
-	url = https://github.com/AlexanderSilvaB/cnn-ocr
+	url = https://github.com/matuzalemmuller/cnn-ocr
